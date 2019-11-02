@@ -106,7 +106,7 @@
                         <th scope="col">Name</th>
                         <th scope="col">Province ID</th>
 						
-                        <th scope="col">Action</th>
+                        <!-- <th scope="col">Action</th> -->
 
                     </tr>
                 </thead>
@@ -119,10 +119,10 @@
                             <th scope="row"><?= $i; ?></th>
                             <td><?= $city['name']; ?></td>
                             <td><?= $city['province_id']; ?></td>
-							<td>
-							<?php echo anchor('pages/edit2/'.$city['id'],'Edit'); ?>
-                              <?php echo anchor('pages/hapus2/'.$city['id'],'Hapus'); ?>
-                            </td>
+								<!-- <td>
+									<a href="" class="badge badge-pill badge-success">Edit</a>
+									<a href="" class="badge badge-pill badge-danger">Delete</a>
+								</td> -->
 
                         </tr>
                         <?php $i++; ?>

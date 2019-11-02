@@ -51,8 +51,15 @@ class Pages extends CI_Controller{
 		$data['province'] = $this->m_pages->edit_data($where,'province')->result();
 		$this->load->view('edit',$data);
 	}
+	function edit2($id){
+		$where = array('id' => $id);
+		$data['city'] = $this->m_pages->edit_data($where,'city')->result();
+		$this->load->view('edit2',$data);
+	}
 
 	function update(){
+
+		$id = $this->input->post('id');
 		$name = $this->input->post('province');
 	
 		$data = array(
@@ -65,11 +72,36 @@ class Pages extends CI_Controller{
 	
 		$this->m_pages->update_data($where,$data,'province');
 		redirect('pages/index');
+
+	}
+
+
+	function update2(){
+		$id = $this->input->post('id');
+		$name = $this->input->post('city');
+		$province_id = $this->input->post('province_id');
+	
+		$data = array(
+			'name' => $name,
+			'province_id' => $province_id
+		);
+	
+		$where = array(
+			'id' => $id
+		);
+	
+		$this->m_pages->update_data($where,$data,'city');
+		redirect('pages/index');
 	}
 
 	function hapus($id){
 		$where = array('id' => $id);
 		$this->m_pages->hapus_data($where,'province');
+		redirect('pages/index');
+	}
+	function hapus2($id){
+		$where = array('id' => $id);
+		$this->m_pages->hapus_data($where,'city');
 		redirect('pages/index');
 	}
 	

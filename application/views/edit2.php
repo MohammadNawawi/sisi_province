@@ -27,11 +27,15 @@
 </div>
 
 <div class="container">
-<?php foreach($province as $u){ ?>
-<form action="<?php echo base_url(). 'pages/update'; ?>" method="POST">
+<?php foreach($city as $u){ ?>
+<form action="<?php echo base_url(). 'pages/update2'; ?>" method="POST">
 <div class="form-group">
 <input type="hidden" name="id" class="form-control" placeholder="Province" value="<?php echo $u->id ?>">
-<input type="text" name="province" class="form-control" placeholder="Province" value="<?php echo $u->name ?>">
+<input type="text" name="city" class="form-control" placeholder="Province" value="<?php echo $u->name ?>">
+</div>
+<div class="form-group">
+
+<input type="text" name="province_id" class="form-control" placeholder="Province" value="<?php echo $u->province_id ?>">
 </div>
 <button type="submit" class="btn btn-primary">Submit</button>
 </form>
